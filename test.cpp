@@ -20,6 +20,21 @@ TEST(EchoTest, Numbers){
 	EXPECT_EQ("123", echo(2,test_val));
 }
 
+TEST(EchoTest, Symbols){
+        char* test_val[2];
+        test_val[0] = "./c-echo";
+        test_val[1] = "!@#";
+        EXPECT_EQ("!@#", echo(2,test_val));
+}
+
+TEST(EchoTest, Spaces){
+        char* test_val[2];
+        test_val[0] = "./c-echo";
+        test_val[1] = "   ";
+        EXPECT_EQ("   ", echo(2,test_val));
+}
+
+
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
